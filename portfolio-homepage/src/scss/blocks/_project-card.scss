@@ -1,0 +1,44 @@
+.project-card {
+  background-color: $color-background;
+  border-radius: $border-radius-md;
+  overflow: hidden;
+  box-shadow: $shadow-sm;
+  height: 100%;
+  @include transition(transform, box-shadow);
+
+  &:hover, &:focus-within {
+    transform: translateY(-5px);
+    box-shadow: $shadow-md;
+  }
+
+  &__image-container {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    @include transition(transform);
+
+    .project-card:hover & {
+      transform: scale(1.05);
+    }
+  }
+
+  &__content {
+    padding: $spacing-lg;
+  }
+
+  &__title {
+    font-size: $font-size-large;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__description {
+    color: lighten($color-text, 20%);
+    margin-bottom: 0;
+  }
+}

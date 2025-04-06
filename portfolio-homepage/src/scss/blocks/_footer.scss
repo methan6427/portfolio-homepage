@@ -1,0 +1,14 @@
+.footer {
+  background-color: lighten($color-text, 10%);
+  color: $color-text-light;
+  padding: $spacing-lg 0;
+
+  &__container {
+    @include container;
+    text-align: center;
+  }
+
+  &__copyright {
+    margin-bottom: 0;
+  }
+}

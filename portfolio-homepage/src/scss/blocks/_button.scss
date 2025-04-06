@@ -1,0 +1,39 @@
+.button {
+  display: inline-block;
+  padding: $spacing-md $spacing-xl;
+  border-radius: $border-radius-md;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  @include transition(background-color, transform);
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  @include focus-visible;
+
+  &_primary {
+    background-color: $color-primary;
+    color: $color-text-light;
+
+    &:hover {
+      background-color: darken($color-primary, 10%);
+      color: $color-text-light;
+    }
+  }
+
+  &_secondary {
+    background-color: $color-secondary;
+    color: $color-text-light;
+
+    &:hover {
+      background-color: darken($color-secondary, 10%);
+      color: $color-text-light;
+    }
+  }
+}

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Adam Khabisa's Portfolio</title>
+    <link rel="stylesheet" href="dist/main.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <script defer src="src/js/script.js"></script>
+    <style>
+        .intro::before {
+            background-color: rgba(0, 0, 0, 0.5) !important;
+            backdrop-filter: blur(2px) !important;
+        }
+        .intro__image{
+            border-radius: 50%;!important;
+            border: 3px solid #000000;!important;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)!important;
+        }
+    </style>
+</head>
+<body class="dark-mode">
+<!-- Navigation Header -->
+<header class="header">
+    <div class="header__container">
+        <div class="header__logo">
+            <a href="index.html" aria-label="Home">AK</a>
+        </div>
+        <nav class="header__nav">
+            <button class="header__toggle" aria-label="Toggle menu">
+                <span class="header__toggle-bar"></span>
+                <span class="header__toggle-bar"></span>
+                <span class="header__toggle-bar"></span>
+            </button>
+            <ul class="header__menu">
+                <li class="header__item"><a href="#projects" class="header__link">Projects</a></li>
+                <li class="header__item"><a href="#skills" class="header__link">Skills</a></li>
+                <li class="header__item"><a href="#resume" class="header__link">Resume</a></li>
+                <li class="header__item"><a href="#contact" class="header__link">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <!-- Intro Section with background image -->
+    <section class="intro fade-in" id="banner" style="background-image: url('src/img/backgr.jpg'); background-position: center center; background-repeat: no-repeat; background-size: cover;">
+        <div class="intro__container" id="introID">
+            <div class="intro__image-container">
+                <img src="src/img/adam.jpg" alt="Adam Khabisa - Web Developer" class="intro__image"/>
+            </div>
+            <div class="intro__content">
+                <h1 class="intro__title">Adam Khabisa's Web Development Portfolio</h1>
+                <p class="intro__text">
+                    CS student at Birzeit University 🎓 | Java, Python, HTML, CSS, JS 💻 | Passionate about web design & CSS animations 🎨✨
+                </p>
+                <div class="intro__buttons">
+                    <a href="#contact" class="button button_primary">Contact Me</a>
+                    <a href="#projects" class="button button_secondary">View Projects</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects fade-in" id="projects">
+        <div class="projects__container">
+            <h2 class="projects__title">Latest Projects</h2>
+            <div class="projects__grid">
+                <!-- GitHub Project Section -->
+                <div class="github-project" id="github-project">
+                    <div class="github-project__background" style="background-image: url('https://avatars.githubusercontent.com/u/101061000?v=4');"></div>
+                    <div class="github-project__content">
+                        <h3>GitHub Profile</h3>
+                        <p>Check out my repositories and contributions to GitHub!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills fade-in" id="skills">
+        <div class="skills__container">
+            <h2 class="skills__title">Skills</h2>
+            <ul class="skills__list">
+                <li>💻 HTML / CSS / SCSS / JavaScript</li>
+                <li>⚙️ Java / Python</li>
+                <li>🎨 UI Design & Animations</li>
+                <li>🧠 Problem-Solving & Algorithms</li>
+                <li>🛠️ Git / GitHub / Figma</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section class="resume fade-in" id="resume">
+        <div class="resume__container">
+            <h2 class="resume__title">Resume</h2>
+            <p>🎓 Bachelor. Computer Science, Birzeit University</p>
+            <p>📂 <a href="docs/Adam-Khabisa-Resume.pdf" target="_blank">Download my resume (PDF)</a></p>
+            <p>💼 <a href="https://www.linkedin.com/in/adam-khabisa-4a9677279/" target="_blank">My LinkedIn Profile</a></p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section fade-in" id="contact">
+        <div class="container">
+            <div class="contact-form">
+                <h3>Send Me a Message</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="company">Company Name</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer__container">
+        <p>&copy; Adam Khabisa 2025</p>
+    </div>
+</footer>
+
+<script>
+    // Dark Mode Toggle Functionality
+    const darkModeToggle = document.getElementById("darkToggle");
+    const body = document.body;
+
+    // Set dark mode by default
+    body.classList.add("dark-mode");
+    localStorage.setItem("dark-mode", "enabled");
+
+    darkModeToggle.addEventListener("click", () => {
+        body.classList.toggle("dark-mode");
+
+        // Store dark mode preference in localStorage
+        if (body.classList.contains("dark-mode")) {
+            localStorage.setItem("dark-mode", "enabled");
+        } else {
+            localStorage.setItem("dark-mode", "disabled");
+        }
+    });
+
+    // On page load, check for dark mode preference
+    window.addEventListener("load", () => {
+        if (localStorage.getItem("dark-mode") === "enabled" || !localStorage.getItem("dark-mode")) {
+            body.classList.add("dark-mode");
+        }
+    });
+
+    // GitHub project click event
+    document.getElementById("github-project").addEventListener("click", () => {
+        window.open("https://github.com/methan6427", "_blank");
+    });
+</script>
+</body>
+</html>
